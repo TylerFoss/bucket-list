@@ -11,8 +11,8 @@ class Buckets extends React.Component {
   componentDidMount() {
     $.ajax({
       url: '/buckets',
-      dataType: 'JSON',
-      type: 'GET'
+      type: 'GET',
+      dataType: 'JSON'
     }).done( buckets => {
       this.setState({ buckets });
     });

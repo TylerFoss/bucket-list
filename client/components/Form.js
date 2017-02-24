@@ -1,7 +1,7 @@
 import React from 'react';
 
-class Form extends React.Component {
-    render(){
+const Form = ({ add, placeholder}) => {
+        let input;
         return (
             <form
       onSubmit={ e => {
@@ -11,13 +11,12 @@ class Form extends React.Component {
       }}
     >
       <input 
-        placeholder={placeholder}
+        
         ref={ n => input = n }
         required
       />
     </form>
         )
     }
-}
 
-export default Form
+export default Form;
