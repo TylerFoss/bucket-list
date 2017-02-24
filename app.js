@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 mongoose.connect( 'mongodb://localhost/bucket-list' );
 
 var index = require('./routes/index');
+var buckets = require('./routes/buckets');
 var users = require('./routes/users');
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/materialize', express.static(__dirname + '/node_modules/materialize-cs
 app.use('/jquery', express.static(__dirname + '/node_modules/materialize-css/node_modules/jquery/dist/'));
 app.use('/', index);
 app.use('/users', users);
+app.use('/buckets', buckets);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
