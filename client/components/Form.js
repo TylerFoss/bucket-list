@@ -10,8 +10,8 @@ const Form = ({ add, placeholder}) => {
         input.value = null;
       }}
     >
-      <input 
-        
+      <input
+        placeholder="Add Bucket"
         ref={ n => input = n }
         required
       />

@@ -1,0 +1,15 @@
+.wrapper {
+  background: url('../images/app_hero.jpg') no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  margin-bottom: 4em;
+}
+.brand-logo {
+  margin-top: 3em;
+  font-size: 3em !important;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border: 8px solid;
+  padding: .6em !important;
+}

@@ -1,3 +1,6 @@
 a {
   color: #00B7FF;
 }
+.card-content {
+  background-color: #3d4752 !important;
+}

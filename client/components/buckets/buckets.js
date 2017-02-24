@@ -67,8 +67,8 @@ class Buckets extends React.Component {
     });
 
     return (
-      <div>
-        <Form add={this.addBucket} placeholder="Add Bucket" />
+      <div className="container">
+        <Form add={this.addBucket} />
         <div className="row">
           { buckets }
         </div>

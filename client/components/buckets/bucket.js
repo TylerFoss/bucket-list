@@ -6,7 +6,7 @@ class Bucket extends React.Component {
         this.state = {edit: false};
         this.input;
     }
-    
+
     toggleEdit = () => {
         this.setState({ edit: !this.state.edit });
     }
@@ -35,16 +35,16 @@ class Bucket extends React.Component {
         let { deleteBucket, _id } = this.props;
         return (
         <div className="col s12 m4">
-            <div className="card blue-grey darken-1">
+            <div className="card hoverable grey darken-1">
             <div className="card-content white-text">
                 { this.showEdit() }
             </div>
-            <div className="card-action">
-                <a onClick={this.toggleEdit}>
+            <div className="card-action grey lighten-2">
+              <a className="red-text" onClick={ () => deleteBucket(_id) }>X</a>
+                <a className="grey-text" onClick={this.toggleEdit}>
                 { this.state.edit ? 'Cancel' : 'Edit' }
                 </a>
-                <a onClick={ () => deleteBucket(_id) }>Delete</a>
-                <a href={`/buckets/${_id}`}>Show</a>
+              <a className="grey-text right" href={`/buckets/${_id}`}>View Card</a>
             </div>
             </div>
         </div>
