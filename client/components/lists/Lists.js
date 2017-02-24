@@ -11,6 +11,46 @@ class Lists extends React.Component{
       url: "/lists",
       type: "Get",
       data:{bucketId: this.props.bucketId}
-    }).done
+    }).done( lists => {
+      this.setState({lists});
+    });
+  }
+  addList = (name) =>{
+    let { bucketId } = this.props;
+    $.ajax({
+      url: "/lists",
+      type: "POST",
+      data: {boardId, name}
+    }).done( list => {
+      this.setState({ lists: [...this.state.lists, list]});
+    });
+  }
+  deleteList = (id) =>{
+    $.ajax({
+      url: `/lists/${id}`
+      type:"DELETE"
+    }).done( () => {
+      this.setState({lists: this.state.lists.filter(l => l._id !== id)});
+    })
+  }
+  render(){
+    let lists = this.state.lists.map(list => {
+      return(
+        <List
+          key={list._id}
+          deleteList={this.deleteList}
+          {...list}
+        />
+      )
+    });
+    return(
+      <div>
+        <Form add={this.addList} placeholder= "Add a List"/>
+        <div className="row">
+          {lists}
+          </div>
+      </div>
+    )
   }
 }
+export default Lists;
