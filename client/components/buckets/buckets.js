@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../Form';
-import Bucket from './Bucket';
+import Bucket from './bucket';
 
 class Buckets extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class Buckets extends React.Component {
   componentDidMount() {
     $.ajax({
       url: '/buckets',
+      dataType: 'JSON',
       type: 'GET'
     }).done( buckets => {
       this.setState({ buckets });
@@ -67,7 +68,7 @@ class Buckets extends React.Component {
 
     return (
       <div>
-        <Form add={this.addBucket} placeholer="Add Bucket" />
+        <Form add={this.addBucket} placeholder="Add Bucket" />
         <div className="row">
           { buckets }
         </div>
